@@ -15,6 +15,7 @@
 class Toolhead; // Forward declaration
 class MCU_stepper;
 class Config;
+class kMove;
 
 class Coord {
 

@@ -150,12 +150,17 @@ ToolHead::ToolHead(Config &config) {
     
 }
 
+ToolHead::~ToolHead()
+{
+    trapq_free(trq);
+}
+
 void ToolHead::register_step_generator(StepGenerator handler) {
     step_generators.push_back(handler);
 }
 
 void ToolHead::processMoves(const std::vector<kMove>& moves) {
-    // Resync print_time if necessary
+    // Resync print_time if necessary 
     if (!special_queuing_state.empty()) {
         if (special_queuing_state != "Drip") {
             // Transition from "NeedPrime"/"Priming" state to main state

@@ -118,7 +118,6 @@ void CoreXYKinematics::_check_endstops(kMove& move) {
 
 void CoreXYKinematics::check_move(kMove &move) {
     auto limits = this->limits;
-    // auto [xpos, ypos] = move.end_pos;
     double xpos = move.end_pos[0];
     double ypos = move.end_pos[1];
     if (xpos < limits[0].first || xpos > limits[0].second ||

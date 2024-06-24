@@ -61,6 +61,7 @@ private:
 class ToolHead {
 public:
     ToolHead(Config& config);
+    ~ToolHead();
     void kmove(const std::vector<double>& newpos, double speed);
     void register_step_generator(StepGenerator handler);
     void processMoves(const std::vector<kMove>& moves);
